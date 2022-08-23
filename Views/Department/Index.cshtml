@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Departments";
+}
+
+@section scripts {
+    <script src="~/Scripts/dep.js"></script>
+}
+
+<!--------------------------------------------->
+
+<div class="col-md-6 col-xl-4">
+    <div id="gridDepartment"></div>
+</div>
+
+<!--------------------------------------------->
+
+<script id="departmentGridToolbarTemplate" type="text/x-kendo-template">
+    <button type="button" class="btn btn-sm btn-primary k-grid-add">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        New
+    </button>
+
+    <button type="button" class="btn btn-sm btn-outline-dark k-grid-save-changes">
+        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        Save
+    </button>
+</script>

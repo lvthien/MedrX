@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - HR</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        @Html.ActionLink("HR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                @Html.ActionLink("Team Member", "Index", "Home", new { area = "" }, new { @class = ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "nav-link active" : "nav-link" })
+                @Html.ActionLink("Report", "Index", "Report", new { area = "" }, new { @class = ViewContext.RouteData.Values["Controller"].ToString() == "Report" ? "nav-link active" : "nav-link" })
+                @Html.ActionLink("Permission", "Index", "Permission", new { area = "" }, new { @class = ViewContext.RouteData.Values["Controller"].ToString() == "Permission" ? "nav-link active" : "nav-link" })
+                @Html.ActionLink("Department", "Index", "Department", new { area = "" }, new { @class = ViewContext.RouteData.Values["Controller"].ToString() == "Department" ? "nav-link active" : "nav-link" })
+                @Html.ActionLink("Position", "Index", "Position", new { area = "" }, new { @class = ViewContext.RouteData.Values["Controller"].ToString() == "Position" ? "nav-link active" : "nav-link" })
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/Scripts/jquery-3.5.1.min.js")
+    @Scripts.Render("~/Scripts/bootstrap.bundle.min.js")
+    @Scripts.Render("~/Scripts/kendo.all.min.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

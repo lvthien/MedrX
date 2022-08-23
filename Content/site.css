@@ -1,0 +1,37 @@
+﻿.navbar-brand
+{
+    border: 2px solid #fff;
+    -moz-border-radius: 21px;
+    -webkit-border-radius: 21px;
+    border-radius: 21px;
+    padding: 4px;
+    text-align: center;
+    width: 42px;
+}
+
+    .navbar-brand:hover
+    {
+        border-color: #ff9;
+    }
+
+.k-grid .k-toolbar .btn
+{
+    -webkit-align-items: center;
+    align-items: center;
+    -moz-column-gap: 4px;
+    -ms-column-gap: 4px;
+    -webkit-column-gap: 4px;
+    column-gap: 4px;
+}
+
+.k-toolbar .btn-outline-dark
+{
+    border-color: #dae0e5;
+}
+
+.k-toolbar .btn-outline-dark:hover
+{
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+}

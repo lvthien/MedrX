@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Team Member";
+}
+
+@section scripts {
+    <script src="~/Scripts/tm.js"></script>
+}
+
+<!--------------------------------------------->
+
+<div id="gridTeamMember"></div>
+
+<!--------------------------------------------->
+
+<div id="dialogActivity">
+    <div id="gridActivityLog"></div>
+</div>
+
+<!--------------------------------------------->
+
+<div id="dialogPhoto">
+    <input type="file" name="photo" id="photo" />
+</div>
+
+<!--------------------------------------------->
+
+<div id="dialogPermission">
+    <select id="permission" multiple="multiple"></select>
+    <br />
+    <br />
+    <button id="savePermission" class="k-button k-button-icontext k-grid-save-changes">
+        <span class="k-icon k-i-check"></span>
+        Save
+    </button>
+    <button id="closePermission" class="k-button k-button-icontext">
+        <span class="k-icon k-i-close"></span>
+        Cancel
+    </button>
+</div>
+
+<!--------------------------------------------->
+
+<script id="memberGridToolbarTemplate" type="text/x-kendo-template">
+    <button type="button" class="btn btn-sm btn-primary k-grid-add">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        New Member
+    </button>
+
+    <button type="button" class="btn btn-sm btn-outline-dark k-grid-save-changes">
+        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        Save
+    </button>
+
+    <button type="button" class="btn btn-sm btn-outline-dark k-grid-terminate">
+        <i class="fa fa-ban" aria-hidden="true"></i>
+        Terminate
+    </button>
+
+    <button type="button" class="btn btn-sm btn-outline-dark k-grid-set-permission">
+        <i class="fa fa-unlock" aria-hidden="true"></i>
+        Set Permission
+    </button>
+
+    <button type="button" class="btn btn-sm btn-outline-dark k-grid-activity-log">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        Change Log
+    </button>
+
+    <span class="k-textbox k-grid-search k-display-flex">
+        <input autocomplete="off" placeholder="Search..." title="Search..." class="k-input">
+        <span class="k-input-icon">
+            <span class="k-icon k-i-search"></span>
+        </span>
+    </span>
+
+    <label class="ml-3 mr-1 mt-2">Filter by department</label>
+    <select id="filterDepartment"></select>
+
+    <label class="ml-3 mr-1 mt-2">Filter by manager</label>
+    <select id="filterManager"></select>
+</script>
+
+<!--------------------------------------------->
+
+<script id="memberPhotoTemplate" type="text/x-kendo-template">
+    # if (Photo) { #
+        <div class="m-auto text-center">
+            <img src="#: Photo #" alt="Member Photo" style="max-height: 80px; max-width: 100%" />
+        </div>
+    # } else { #
+        <a href="\\#" class="upload-photo" style="color: \\#00f">No photo, click to upload</a>
+    # } #
+</script>
+
+<!--------------------------------------------->
+
+<script id="memberPermissionsTemplate" type="text/x-kendo-template">
+    # if (Permissions?.length) { #
+        <ul>
+            # for (let i = 0; i < Permissions.length; i++) { #
+                <li>#: Permissions[i] #</li>
+            # } #
+        </ul>
+    # } else { #
+        No permission yet.
+    # } #
+</script>
